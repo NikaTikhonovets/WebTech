@@ -19,16 +19,17 @@ public class main
             x = scanner.nextDouble();
             System.out.print("y = ");
             y = scanner.nextDouble();
+            scanner.close();
+
+            Calculate calculator = new Calculate();
+            Double result = calculator.calculateValue(x, y);
+
+            if (result != null)
+                System.out.println("Result = "+result);
         }
         catch (Exception exc){
-            System.out.printf("Incorrect input data");
+            System.out.printf("The entered data is invalid!");
         }
-        scanner.close();
 
-        Calculate calculator = new Calculate();
-        Double result = calculator.calculateValue(x, y);
-
-        if (result != null)
-            System.out.println("Result = "+result);
     }
 }
